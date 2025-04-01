@@ -44,6 +44,8 @@ filesToCopy = [
 		"app.js",
 		"apple-touch-icon.png",
 		"bandb.pdf",
+		"deepsearch.html",
+		"deepsearch.js",
 		"error.html",
 		"favicon.ico",
 		"imagepage-legacy.js",
@@ -56,6 +58,7 @@ filesToCopy = [
 		"moviepage.js",
 		"panopage.js",
 		"server.html",
+		"siteindex.txt"
 ]
 
 foldersToCopy = [
@@ -64,9 +67,7 @@ foldersToCopy = [
 		"Holidays",
 		"WheelieSchool",
 		"Yvonka",
-		"castrohouse",
 		"gadgets",
-		"losaltoshouse",
 		"map",
 		"meta",
 		"movielist",
@@ -279,10 +280,13 @@ def removeDestinationFolder(path):
 	except OSError as e:
 		console.print(f"Error removing or creating destination folder '{path}': {e}")
 
+console.print("Clean destination folder...")
 removeDestinationFolder(dstPath)
 createFolder(dstPath)
 
+console.print("Copying files...")
 copyFiles(filesToCopy)
+
 copyFolders(foldersToCopy)
 copyEventFolders(eventFolders)
 
