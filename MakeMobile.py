@@ -292,4 +292,4 @@ copyEventFolders(eventFolders)
 
 console.print( f"Copied {copiedFileCount} files - {formatBytes(copyByteCount)}" )
 console.print ("shell command for zip file:")
-console.print( f"(cd {dstPath} && zip -r -0 -v ../RickAndRandy.zip .)")
+console.print( f"(cd {dstPath} && zip -r -0 ../RickAndRandy.zip .)")
